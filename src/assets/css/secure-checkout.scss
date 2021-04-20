@@ -1,0 +1,480 @@
+@import 'mixin';
+@import 'variables';
+
+
+
+
+//breadcumb style here
+.breadcumb{
+    width: 100%;
+    @include flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            a{
+                @include font(15);
+                color:$black;
+                text-decoration: none;
+                @include transition;
+                &:hover{
+                    color:$baseColor;
+                }
+            }           
+        }        
+        li:before{
+            display: inline-block;
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: $black;
+            content: ">";
+        }
+        li:first-child:before{
+            content: none;
+        }        
+        li:last-child a{
+            color: $baseColor;
+        }
+    }
+}
+
+
+.securecheckout{
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.checkout{
+    width: 100%;
+    padding:25px 0 60px;
+    .heading{
+        padding: 8px 0;
+        @include flex();
+        justify-content: space-between;
+        align-items: center;
+        .headshop{
+            h1{
+                @include font(30);
+                color: $darken;
+                font-weight: 600;
+            }            
+        }
+        .server{
+            @include font(14);
+            color: $darken;
+            opacity: 0.3;
+            font-weight: 600;
+            img{
+                margin-top: -4px;
+                width: 14px;
+                height: auto;
+            }
+        }
+    }
+    .logintoacount{
+        padding: 20px 25px;
+        @include flex();
+        align-content: center;
+        background: lighten($light,1%);
+        @include radius(5px);
+        p{
+            @include font(16);
+            font-weight: 400;
+            color: $darken;
+            margin: 0;
+            a{
+                display: inline-block;
+                font-weight: 600;
+                color: $baseColor;
+                text-decoration: none;
+                position: relative;
+                &:before{
+                    content:'';
+                    border:0px;
+                    width: 100%;
+                    height: 1.5px;
+                    background: $baseColor;
+                    position: absolute;
+                    left:0px;
+                    bottom: 0px;
+                    @include transition();
+                    @include scaleX(0);
+                    transform-origin: left;
+                }
+                &:hover {
+                    text-decoration: none;
+                    color: $baseColor;
+                    &:before{
+                    @include scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+    //secure shipping detail style here
+    .securewrap{
+        width: 100%;
+        @include flex();
+            justify-content: space-between;
+            align-items:flex-start;
+            align-content:flex-start;
+        .securewrapcnt{
+            width: calc(65% - 10px);                
+            margin-top: 40px;                    
+            .shippingdetails{
+                padding: 20px;
+                @include radius(6px);
+                border: 1px solid #dddddd;                
+                h2{
+                    @include font(22);
+                    font-weight: 500;
+                    color: $darken;
+                    padding: 0 0 25px;
+                    border-bottom: 1px dashed #dddddd;
+                }  
+                .customerfrom{
+                    margin-top: 20px;
+                    @include flex();
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    .form-group{
+                        width: calc(50% - 8px);
+                        margin-bottom: 20px;
+                        align-items:flex-start;  
+                        .text-field {
+                            width: 100%;
+                            background-color: $white;
+                            .MuiInputBase-root:hover {
+                              .MuiOutlinedInput-notchedOutline{
+                                  border-color: rgba(0, 0, 0, 0.23);
+                                  border-width: 1px;
+                              }
+                            }
+                            .MuiOutlinedInput-root.Mui-focused{
+                              .MuiOutlinedInput-notchedOutline{
+                                  border-color: rgba(0, 0, 0, 0.23);
+                                  border-width: 1px; 
+                              }
+                            }
+                            .MuiInputLabel-outlined.MuiInputLabel-shrink{
+                                color: #22ab4b;
+                                font-size: 16px;
+                            }
+                        } 
+                        .select-dropdown {
+                            width: 100%;
+                            .MuiInputBase-root:hover {
+                             .MuiOutlinedInput-notchedOutline{
+                                 border-color: rgba(0, 0, 0, 0.23);
+                                 border-width: 1px;
+                             }
+                           }
+                           .MuiOutlinedInput-root.Mui-focused{
+                             .MuiOutlinedInput-notchedOutline{
+                                 border-color: rgba(0, 0, 0, 0.23);
+                                 border-width: 1px; 
+                             }
+                           }
+                           .MuiInputLabel-outlined.MuiInputLabel-shrink{
+                             color: #22ab4b;
+                             font-size: 16px;
+                           }
+                         }
+                    }
+
+
+                    .rdio {
+                        position: relative;
+                        input[type="radio"] {
+                          opacity: 0;
+                        }
+                        label {
+                          padding-left: 10px;
+                          cursor: pointer;
+                          margin-bottom: 7px !important;
+                          &:before {
+                            width: 18px;
+                            height: 18px;
+                            position: absolute;
+                            top: 5px;
+                            left: 0;
+                            content: '';
+                            display: inline-block;
+                            -moz-border-radius: 50px;
+                            -webkit-border-radius: 50px;
+                            border-radius: 50px;
+                            border: 1px solid $baseColor;
+                            background: #fff;
+                          }
+                        }
+                        input[type="radio"] {
+                            margin:0px;
+                          &:disabled + label {
+                            color: #999;
+                            &:before {
+                              background-color:$baseColor;
+                            }
+                          }
+                          &:checked + label::after {
+                            content: '';
+                            position: absolute;
+                            top: 9px;
+                            left: 4px;
+                            display: inline-block;
+                            font-size: 11px;
+                            width: 10px;
+                            height: 10px;
+                            background-color: $baseColor;
+                            -moz-border-radius: 50px;
+                            -webkit-border-radius: 50px;
+                            border-radius: 50px;
+                          }
+                        }
+                      }
+                      
+                      .rdio-default input[type="radio"]:checked + label:before {
+                        border-color: $baseColor;
+                      }
+                      
+                      .rdio-primary input[type="radio"]:checked + label {
+                        &:before {
+                          border-color: $baseColor;
+                        }
+                        &::after {
+                          background-color:$baseColor;
+                        }
+                      }
+                    
+
+                    .form-control{
+                        padding: 1rem 0.95rem; 
+                        border: 1px solid #ccc;
+                        @include font(16);
+                        @include radius(5px);
+                        color: $darken;
+                        line-height: 1.4;
+                        width: 100%;
+                        display: block;
+                        height: auto;
+                        background-color: $white;
+                        background-clip: padding-box;
+                        @include transition();
+                        &:focus{
+                            outline: none;
+                            box-shadow: 0 0 0 0.2rem rgba($baseColor, 0.5%)
+                        }                        
+                    }
+                    .custom-select{
+                        padding: 1rem 0.95rem; 
+                        border: 1px solid #ccc;
+                        @include font(16);
+                        @include radius(5px);
+                        line-height: 1.4;
+                        width: 100%;
+                        display: block;
+                        background-color: $white;
+                        background-clip: padding-box;
+                        height: auto;
+                        appearance: none;
+                        background: $white url('../img/area-updown.svg')  no-repeat right 0.75rem center;                    
+                    }                    
+                    &:selected{
+                        color: red !important;
+                    }
+                    
+                }
+                p{
+                    @include font(13);
+                    font-weight: 500;
+                    color: $red;
+                    margin: 0;
+                    line-height: 20px;
+                }
+                h4{
+                    display: block;
+                    width: 100%;
+                    @include font(22);
+                    font-weight: 500;
+                    color: $darken;
+                    margin: 30px 0 20px;
+                }              
+            }   
+            p{
+                margin-top: 25px;
+                @include font(14);
+                color: $darken;
+                line-height: 20px;
+                a{
+                    color: $darken;
+                    text-decoration: underline;
+                    display: inline-block;
+                }
+            }
+        }
+
+        //order summary style here
+        .ordersummary{
+            width: calc(35% - 10px);   
+            background: lighten($light, 1%);   
+            @include radius(6px);
+            padding: 18px;
+            margin-top: 40px;
+            h3{
+                @include font(18);
+                font-weight: 600;
+                color: $black;
+                border-bottom: 1px dashed $baseColor;
+                margin-bottom: 10px;
+                padding-bottom: 20px;    
+            }  
+            .summarydetail{
+                @include flex();
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+                .itemtxt{
+                    @include font(16);
+                    color: $darken;
+                    font-weight: 500;
+                }
+                .itemprice{
+                    @include font(16);
+                    color: $black;                
+                }
+                .fontweight600{
+                    font-weight: 600;
+                }
+            }
+            .promowrap{
+                margin: 15px 0;
+                padding: 0 0 25px;
+                border-bottom: 1px dashed $baseColor;
+                a{
+                    @include font(16);
+                    text-decoration: underline;
+                    color: $darken;
+                    font-weight: 600;
+                }
+                .promobody{
+                    position: relative;
+                    p{
+                        @include font(13);
+                        color: $black;
+                        margin-top: 10px;
+                    }
+                    input{
+                        border: 1px solid #dddddd; 
+                        padding: 8px;
+                        max-width: 250px;
+                        @include radius(6px);
+                        @include font(16);
+                        color: $darken;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                    a{
+                        @include font(16);
+                        color: $baseColor;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        text-decoration: none;
+                        margin-left: 12px;
+                    }
+                    img{
+                        position: absolute;
+                        right: 0;
+                        bottom: 15px;
+                        width: 14px;
+                        height: 14px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .btncheckout{
+                margin-top: 20px;
+                display: block;
+                width: 100%;
+                padding: 12px 50px;
+                background: $baseColor;
+                color: $white;
+                text-align: center;
+                @include radius(6px);
+                @include font(18);
+                @include transition;
+                outline: none;
+                border: 0;
+                cursor: pointer;
+                &:hover{
+                    background: $darken;
+                    @include shadow(0,3px,13px, rgba($black, .5%));
+                }
+            }  
+        } 
+    }    
+}
+
+// responsive style here
+@media (max-width: 991px) {
+    .checkout{
+        .securewrap{
+            flex-wrap: wrap;
+            .securewrapcnt{
+                width: 100%;                   
+                .shippingdetails{                    
+                    h2{
+                        @include font(20);
+                    }                
+                }  
+            }    
+            //order summary style here
+            .ordersummary{
+                width: 100%;
+            } 
+        }
+    } 
+}
+
+@media (max-width: 767px) {
+    .checkout{
+        .heading{
+            .headshop{
+                h1{
+                    @include font(22);
+                }            
+            }
+        }
+        padding:15px 0 50px;
+        .securewrap{
+            flex-wrap: wrap;
+            .securewrapcnt{
+                width: 100%;
+                margin-top: 30px;                   
+                .shippingdetails{
+                    .customerfrom{
+                        .form-group{
+                            width: 100%;
+                        }
+                        .form-control,
+                        .custom-select{
+                            padding: 0.80rem 0.95rem; 
+                        }
+                    }                
+                }  
+            }    
+            //order summary style here
+            .ordersummary{
+                width: 100%;
+                margin-top: 30px;
+            } 
+        }
+    } 
+}

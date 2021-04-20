@@ -1,0 +1,59 @@
+@import './variables'; 
+@import './mixin'; 
+
+// Google Font : Noto Sans TC: font-family: 'Noto Sans TC', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap');
+
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    font-size: 16px;
+    color:$black;
+}
+*:focus {
+    outline: 0px !important;
+}
+a {
+    color: $baseColor;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.transition {
+    transition: (all 0.3s ease-in-out);
+}
+
+.flex {
+    @include flex();
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-style: normal;
+    overflow: hidden;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+
+// Scrollbar
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba($baseColor, 0.5%);
+  }
+
+@media (min-width: 1500px){
+    .container{
+        max-width: 80%;
+    }
+}

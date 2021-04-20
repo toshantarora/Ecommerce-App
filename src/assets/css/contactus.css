@@ -1,0 +1,228 @@
+/* Mixin */
+.flex {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.breadcumb {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.breadcumb ul {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcumb ul li {
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.breadcumb ul li a {
+  font-size: 0.9375rem;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.breadcumb ul li a:hover {
+  color: #22ab4b;
+}
+
+.breadcumb ul li:before {
+  display: inline-block;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  color: #000;
+  content: ">";
+}
+
+.breadcumb ul li:first-child:before {
+  content: none;
+}
+
+.breadcumb ul li:last-child a {
+  color: #22ab4b;
+}
+
+.contact {
+  width: 100%;
+  background: #e9fbef url("../imgs/contact-txture.png") right top no-repeat;
+  min-height: 525px;
+  background-size: auto;
+  overflow: hidden;
+}
+
+.contact .contacttext {
+  padding: 100px 0 0;
+}
+
+.contact .contacttext h1 {
+  font-size: 2.625rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.contact .contacttext p {
+  font-size: 1.125rem;
+  color: #000;
+  margin-top: 20px;
+  max-width: 500px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.contact .contacttext p a {
+  color: #000;
+  display: inline-block;
+}
+
+@media (max-width: 991px) {
+  .contact {
+    min-height: 400px;
+    background-size: 580px;
+  }
+  .contact .contacttext {
+    padding: 80px 0 0;
+  }
+  .contact .contacttext h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact {
+    min-height: 360px;
+    background-size: 80%;
+  }
+  .contact .contacttext {
+    padding: 10% 0 0;
+  }
+  .contact .contacttext h1 {
+    font-size: 1.875rem;
+  }
+  .contact .contacttext p {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+}
+
+.contactform {
+  margin-top: -150px;
+}
+
+.contactform .contactwrap {
+  width: 50%;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 40px;
+}
+
+.contactform .contactwrap h2 {
+  font-size: 1.5rem;
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.contactform .contactwrap .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contactform .contactwrap .form-control {
+  padding: 1rem 0.95rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: #0d2e3a;
+  line-height: 1.4;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.contactform .contactwrap .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+}
+
+.contactform .contactwrap .formsubmit {
+  display: inline-block;
+  padding: 12px 50px;
+  background: #22ab4b;
+  color: #fff;
+  text-align: center;
+  border-radius: 28px;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  font-size: 1.125rem;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.contactform .contactwrap .formsubmit:hover {
+  background: #0d2e3a;
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 991px) {
+  .contactform {
+    margin-top: -100px;
+  }
+  .contactform .contactwrap {
+    padding: 30px;
+    width: 75%;
+  }
+  .contactform .contactwrap h2 {
+    font-size: 1.5rem;
+  }
+  .contactform .contactwrap .formsubmit {
+    padding: 12px 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contactform {
+    margin-top: -100px;
+  }
+  .contactform .contactwrap {
+    padding: 25px 20px;
+    width: 100%;
+  }
+  .contactform .contactwrap h2 {
+    font-size: 1.25rem;
+  }
+  .contactform .contactwrap .formsubmit {
+    font-size: 1rem;
+    padding: 8px 30px;
+  }
+}
+/*# sourceMappingURL=contactus.css.map */

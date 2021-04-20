@@ -1,24 +1,28 @@
 import React from 'react'
 import './Card.css';
 const CardDetails = (props) => {
+     
     const {title,image, price} = props;
-    
+    // const [allItems, setAllItems] = useState([]);
     const addItemInCart = () =>{
         let array = [];
         let cart = localStorage.getItem("cart");
         if(cart === null){
-            let obj = {};
-            obj['name'] = props;
+            let obj ={quantity :1, ...props};
+            
+           
             array.push(obj);
             localStorage.setItem("cart", JSON.stringify(array));
         }
         else{
-            cart =JSON.parse(localStorage.getItem("cart"));
-            let obj = {};
-            obj['name'] = props;
+            cart = JSON.parse(localStorage.getItem("cart"));
+         
+            let obj ={quantity : 1, ...props};
             cart.push(obj);
             localStorage.setItem("cart", JSON.stringify(cart));
         }
+
+
     }
     return (
         <div className="card">
@@ -31,7 +35,7 @@ const CardDetails = (props) => {
            </div>
            <div>
                <button className="cart-button" type="submit">View</button>
-               <button onClick={addItemInCart} className="cart-button" type="submit">Add To Cart</button>
+               <button onClick={() => addItemInCart()} className="cart-button" type="submit">Add To Cart</button>
            </div>
         </div>
     )

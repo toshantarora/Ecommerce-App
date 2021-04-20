@@ -1,0 +1,381 @@
+@import 'mixin';
+@import 'variables';
+
+
+
+
+//breadcumb style here
+.breadcumb{
+    width: 100%;
+    @include flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            a{
+                @include font(15);
+                color:$black;
+                text-decoration: none;
+                @include transition;
+                &:hover{
+                    color:$baseColor;
+                }
+            }           
+        }        
+        li:before{
+            display: inline-block;
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: $black;
+            content: ">";
+        }
+        li:first-child:before{
+            content: none;
+        }        
+        li:last-child a{
+            color: $baseColor;
+        }
+    }
+}
+
+
+.shoppingcart{
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.shopping{
+    width: 100%;
+    padding:25px 0 60px;
+    .heading{
+        padding: 8px 0;
+        @include flex();
+        justify-content: space-between;
+        align-items: center;
+        .headshop{
+            h1{
+                @include font(30);
+                color: $darken;
+                font-weight: 600;
+            }            
+        }
+        .server{
+            @include font(14);
+            color: $darken;
+            opacity: 0.3;
+            font-weight: 600;
+            img{
+                margin-top: -4px;
+                width: 14px;
+                height: auto;
+            }
+        }
+    }
+    .shoppingwrap{        
+        @include flex();
+        justify-content: space-between;
+        .shoppinglist{
+            width: calc(65% - 10px);
+            padding: 15px;
+            @include radius(6px);
+            border: 1px solid #dddddd;
+            .flex{
+                @include flex();
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0 30px;
+                border-bottom: 1px dashed $border;
+                @include transition();
+                .column{                    
+                    @include flex-inline();
+                    .productimg{
+                        width: 110px;
+                        height: 82px;
+                        padding: 12px;
+                        background: $lightyellow;
+                        text-align: center;                    
+                        img{
+                            width: 68px;
+                            height: auto;
+                            @include transition();
+                        }
+                    }
+                    .productname{
+                        margin:5px 0 0 25px;
+                        a{
+                            display: inline-block;
+                            @include font(16);
+                            font-weight: 700;
+                            text-decoration: none;
+                            color: $black;                            
+                            &:hover{
+                                @include transition();
+                                color: $baseColor;
+                                text-decoration: underline;
+                            }
+                        }
+                        .remove{
+                            margin-top: 15px;
+                            a{
+                                padding: 4px;
+                                @include font(12);
+                                color: $red;
+                                display: inline-block;
+                                text-decoration: none;                                
+                                img{
+                                    width: 11px;
+                                    height: auto;
+                                    margin-right: 10px;
+                                }
+                            }
+                            
+                        }                        
+                    }
+                    .quantityprice{
+                        @include flex-inline();
+                        justify-content: space-between;     
+                        .quantiyimg{
+                            margin:0 18px;
+                            a{
+                                display: inline-block;
+                                img{
+                                    width: 30px;
+                                    height: auto;
+                                }
+                            }
+                        }    
+                        .quantiy{
+                            @include font(16);
+                            font-weight: 500;
+                            color: $black;
+                        }  
+                        .price{
+                            @include font(16);
+                            font-weight: 600;
+                            color: $black;
+                            margin-left: 30px;
+                        }             
+                    }
+                }
+                &:first-child{
+                    padding-top: 0;
+                }
+                &:last-child{
+                    border: 0;
+                }
+                &:hover{
+                    .productimg{
+                        img{
+                            @include scale(1.1);
+                        }
+                    }                    
+                }
+            }
+        }
+    }
+
+    .ordersummary{
+        width: calc(35% - 10px);   
+        background: lighten($light, 1%);   
+        @include radius(6px);
+        padding: 18px;
+        h3{
+            @include font(18);
+            font-weight: 600;
+            color: $black;
+            border-bottom: 1px dashed $baseColor;
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+
+        }
+        .summarydetail{
+            @include flex();
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            .itemtxt{
+                @include font(16);
+                color: $darken;
+                font-weight: 500;
+            }
+            .itemprice{
+                @include font(16);
+                color: $black;                
+            }
+            .fontweight600{
+                font-weight: 600;
+            }
+        }
+        .promowrap{
+            margin: 15px 0;
+            padding: 0 0 25px;
+            border-bottom: 1px dashed $baseColor;
+            a{
+                @include font(16);
+                text-decoration: underline;
+                color: $darken;
+                font-weight: 600;
+            }
+            .promobody{
+                position: relative;
+                p{
+                    @include font(13);
+                    color: $black;
+                    margin-top: 10px;
+                }
+                input{
+                    border: 1px solid #dddddd; 
+                    padding: 8px;
+                    max-width: 250px;
+                    @include radius(6px);
+                    @include font(16);
+                    color: $darken;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                a{
+                    @include font(16);
+                    color: $baseColor;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                    margin-left: 12px;
+                }
+                img{
+                    position: absolute;
+                    right: 0;
+                    bottom: 15px;
+                    width: 14px;
+                    height: 14px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .btncheckout{
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            padding: 12px 50px;
+            background: $baseColor;
+            color: $white;
+            text-align: center;
+            @include radius(6px);
+            @include font(18);
+            @include transition;
+            outline: none;
+            border: 0;
+            cursor: pointer;
+            &:hover{
+                background: $darken;
+                @include shadow(0,3px,13px, rgba($black, .5%));
+            }
+        }        
+    }    
+}
+
+
+
+@media (max-width: 991px) {
+    .shopping{
+        .heading{
+            padding: 8px 0;
+            .headshop{
+                h1{
+                    @include font(26);
+                }            
+            }
+        }
+        .shoppingwrap{        
+            flex-wrap: wrap;
+            .shoppinglist{
+                width: 100%;
+                .flex{
+                    @include flex();
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 15px 0 30px;
+                    border-bottom: 1px dashed $border;
+                    @include transition();
+                    .column{
+                        @include flex-inline();
+                    }
+                }
+            }
+        }    
+        .ordersummary{
+            width: 100%;   
+            margin-top: 40px;
+        }    
+    }
+}
+
+@media (max-width: 767px) {
+    .shopping{
+        width: 100%;
+        padding:15px 0 50px;
+        .heading{
+            padding: 8px 0;
+            .headshop{
+                h1{
+                    @include font(22);
+                }            
+            }
+        }
+        .shoppingwrap{        
+            flex-wrap: wrap;
+            .shoppinglist{
+                width: 100%;
+                .flex{
+                    @include flex();
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 15px 0 30px;
+                    border-bottom: 1px dashed $border;
+                    flex-wrap: wrap;
+                    @include transition();
+                    .column{
+                        width: 100%;
+                        @include flex-inline();                        
+                        .quantityprice{
+                            @include flex-inline();
+                            justify-content: space-between;     
+                            .quantiyimg{
+                                margin:0;
+                            }    
+                            .quantiy{
+                                @include font(16);
+                                margin:0 18px;
+                            }   
+                            .price{
+                                margin-left: 35px;
+                            }         
+                        }
+                        &:last-child{
+                            margin-top: 20px;
+                            justify-content: end;
+                        }
+                    }
+                    
+                }
+            }
+        }    
+        .ordersummary{
+            width: 100%;   
+            margin-top: 40px;
+            .btncheckout{
+                margin-top: 15px;
+                padding: 8px 50px;
+            }
+        }    
+
+    }
+}

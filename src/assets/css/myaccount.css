@@ -1,0 +1,402 @@
+/* Mixin */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap");
+.flex {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+* {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+*:focus, *:hover {
+  outline: 0px;
+}
+
+.breadcumb {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.breadcumb ul {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcumb ul li {
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.breadcumb ul li a {
+  font-size: 0.9375rem;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.breadcumb ul li a:hover {
+  color: #22ab4b;
+}
+
+.breadcumb ul li:before {
+  display: inline-block;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  color: #000;
+  content: ">";
+}
+
+.breadcumb ul li:first-child:before {
+  content: none;
+}
+
+.breadcumb ul li:last-child a {
+  color: #22ab4b;
+}
+
+.myaccount {
+  width: 100%;
+  padding: 30px 0 40px;
+}
+
+.myaccount h1 {
+  font-size: 1.875rem;
+  color: #0d2e3a;
+  font-weight: 400;
+}
+
+.myaccount .accountwrap {
+  width: 100%;
+}
+
+.myaccount .accountwrap .userdetails {
+  width: 100%;
+}
+
+.myaccount .accountwrap .userdetails .userprofilepic {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 15px 0;
+}
+
+.myaccount .accountwrap .userdetails .userprofilepic .userprofilebox {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  background: #f9f9f9;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.myaccount .accountwrap .userdetails .userprofilepic .userprofilebox img {
+  width: auto;
+  height: auto;
+}
+
+.myaccount .accountwrap .userdetails .picload {
+  margin-left: 15px;
+}
+
+.myaccount .accountwrap .userdetails .picload .btnpic {
+  background: #22ab4b;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 8px 20px;
+  font-weight: 300;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  display: inline-block;
+}
+
+.myaccount .accountwrap .userdetails .picload .btnpic:hover {
+  background: #0d2e3a;
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 13px rgba(0, 0, 0, 0.5);
+}
+
+.myaccount .accountwrap .form-group {
+  margin-bottom: 20px;
+}
+
+.myaccount .accountwrap .form-group label {
+  font-size: 0.75rem;
+  color: #000;
+}
+
+.myaccount .accountwrap .form-group .form-control {
+  padding: 1rem 0.95rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: #0d2e3a;
+  line-height: 1.4;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.myaccount .accountwrap .form-group .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+}
+
+.myaccount .accountwrap .form-group .form-control::-webkit-input-placeholder {
+  font-size: 0.875rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.myaccount .accountwrap .form-group .form-control:-ms-input-placeholder {
+  font-size: 0.875rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.myaccount .accountwrap .form-group .form-control::-ms-input-placeholder {
+  font-size: 0.875rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.myaccount .accountwrap .form-group .form-control::placeholder {
+  font-size: 0.875rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.myaccount .accountwrap .form-group .custom-select {
+  padding: 1rem 0.95rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  line-height: 1.4;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  background-clip: padding-box;
+  height: auto;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #fff url("../imgs/area-updown.svg") no-repeat right 0.75rem center;
+}
+
+.myaccount .accountwrap .form-group .custom-select:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+}
+
+.myaccount .shipping {
+  width: 100%;
+  padding: 20px 30px 10px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  margin-top: 20px;
+}
+
+.myaccount .shipping h2 {
+  font-size: 1.375rem;
+  color: #000;
+  font-weight: 400;
+  margin: 0 0 20px;
+}
+
+.myaccount .billing {
+  width: 100%;
+  padding: 20px 30px 10px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  margin-top: 30px;
+}
+
+.myaccount .billing h2 {
+  font-size: 1.375rem;
+  color: #000;
+  margin: 0 0 20px;
+}
+
+.myaccount .billing .form-group .rdio {
+  position: relative;
+}
+
+.myaccount .billing .form-group .rdio input[type="radio"] {
+  opacity: 0;
+}
+
+.myaccount .billing .form-group .rdio label {
+  padding-left: 10px;
+  cursor: pointer;
+  margin-bottom: 7px !important;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.myaccount .billing .form-group .rdio label:before {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  content: '';
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border: 1px solid #22ab4b;
+  background: #fff;
+}
+
+.myaccount .billing .form-group .rdio input[type="radio"] {
+  margin: 0px;
+}
+
+.myaccount .billing .form-group .rdio input[type="radio"]:disabled + label {
+  color: #999;
+}
+
+.myaccount .billing .form-group .rdio input[type="radio"]:disabled + label:before {
+  background-color: #22ab4b;
+}
+
+.myaccount .billing .form-group .rdio input[type="radio"]:checked + label::after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 4px;
+  display: inline-block;
+  font-size: 0.6875rem;
+  width: 10px;
+  height: 10px;
+  background-color: #22ab4b;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+}
+
+.myaccount .billing .form-group .rdio-default input[type="radio"]:checked + label:before {
+  border-color: #22ab4b;
+}
+
+.myaccount .billing .form-group .rdio-primary input[type="radio"]:checked + label:before {
+  border-color: #22ab4b;
+}
+
+.myaccount .billing .form-group .rdio-primary input[type="radio"]:checked + label::after {
+  background-color: #22ab4b;
+}
+
+@media (max-width: 767px) {
+  .myaccount {
+    width: 100%;
+    padding: 15px 0 40px;
+  }
+  .myaccount h1 {
+    font-size: 1.5rem;
+  }
+  .myaccount .accountwrap {
+    width: 100%;
+  }
+  .myaccount .accountwrap .userdetails {
+    width: 100%;
+  }
+  .myaccount .accountwrap .userdetails .userprofilepic {
+    display: -webkit-box;
+    display: -ms-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding: 15px 0;
+  }
+  .myaccount .accountwrap .form-group {
+    margin-bottom: 15px;
+  }
+  .myaccount .accountwrap .form-group .form-control {
+    padding: 0.80rem 0.95rem;
+  }
+  .myaccount .accountwrap .form-group .custom-select {
+    padding: 0.80rem 0.95rem;
+  }
+  .myaccount .shipping {
+    padding: 12px 18px 5px;
+    margin-top: 20px;
+  }
+  .myaccount .shipping h2 {
+    font-size: 1.375rem;
+    color: #000;
+    font-weight: 400;
+    margin: 0 0 20px;
+  }
+  .myaccount .billing {
+    padding: 12px 18px 5px;
+    margin-top: 20px;
+  }
+  .myaccount .billing h2 {
+    font-size: 1.25rem;
+  }
+  .myaccount .billing .form-group .rdio {
+    position: relative;
+  }
+  .myaccount .billing .form-group .rdio label {
+    font-size: 0.9375rem;
+    font-weight: 400;
+  }
+}
+/*# sourceMappingURL=myaccount.css.map */

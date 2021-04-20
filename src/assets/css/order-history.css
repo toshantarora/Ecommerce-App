@@ -1,0 +1,237 @@
+/* Mixin */
+.flex {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.breadcumb {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.breadcumb ul {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcumb ul li {
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.breadcumb ul li a {
+  font-size: 0.9375rem;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.breadcumb ul li a:hover {
+  color: #22ab4b;
+}
+
+.breadcumb ul li:before {
+  display: inline-block;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  color: #000;
+  content: ">";
+}
+
+.breadcumb ul li:first-child:before {
+  content: none;
+}
+
+.breadcumb ul li:last-child a {
+  color: #22ab4b;
+}
+
+.orderwrap {
+  width: 100%;
+  padding: 25px 0 60px;
+}
+
+.orderwrap h1 {
+  font-size: 1.875rem;
+  color: #0d2e3a;
+  margin: 0 0 15px;
+}
+
+.orderwrap .orderlist {
+  padding: 20px 30px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.orderwrap .orderlist .orderthread {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0 25px;
+  border-bottom: 1px dashed #DDDDDD;
+}
+
+.orderwrap .orderlist .orderthread .thread {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000;
+  width: 16%;
+}
+
+.orderwrap .orderlist .orderthread .thread.width20 {
+  width: 20%;
+}
+
+.orderwrap .orderlist .fulllodrist {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px dashed #DDDDDD;
+}
+
+.orderwrap .orderlist .fulllodrist .mob {
+  width: 16%;
+}
+
+.orderwrap .orderlist .fulllodrist .mob.width20 {
+  width: 20%;
+}
+
+.orderwrap .orderlist .fulllodrist .mob .leftcolum {
+  display: none;
+}
+
+.orderwrap .orderlist .fulllodrist .mob .rightcolum {
+  padding: 0;
+}
+
+.orderwrap .orderlist .fulllodrist .mob .rightcolum .itemdetails {
+  font-size: 1rem;
+  color: #000;
+}
+
+.orderwrap .orderlist .fulllodrist .mob .rightcolum .itemdetails h2 a {
+  display: block;
+  font-size: 1rem;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.orderwrap .orderlist .fulllodrist .mob .rightcolum .itemdetails h2 a:hover {
+  color: #22ab4b;
+  text-decoration: underline;
+}
+
+.orderwrap .orderlist .fulllodrist .mob .rightcolum .itemdetails p {
+  font-size: 0.75rem;
+  color: #22ab4b;
+  margin: 0;
+}
+
+.orderwrap .orderlist .fulllodrist .mob .rightcolum .itemdetails a {
+  display: inline-block;
+  font-size: 1rem;
+  color: #22ab4b;
+  text-decoration: none;
+}
+
+.orderwrap .orderlist .fulllodrist .mob .rightcolum .itemdetails a .filepdf {
+  width: 26px;
+  height: auto;
+}
+
+.orderwrap .orderlist .fulllodrist .mob .rightcolum .itemdetails a .repeatimg {
+  width: 16px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.orderwrap .orderlist .fulllodrist:last-child {
+  border: 0;
+}
+
+@media (max-width: 991px) {
+  .orderwrap {
+    width: 100%;
+    padding: 25px 0 50px;
+  }
+  .orderwrap h1 {
+    font-size: 1.5rem;
+    color: #0d2e3a;
+    margin: 0 0 15px;
+  }
+  .orderwrap .orderlist {
+    padding: 15px 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+  }
+  .orderwrap .orderlist .orderthread {
+    display: none;
+  }
+  .orderwrap .orderlist .fulllodrist {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .orderwrap .orderlist .fulllodrist .mob {
+    display: -webkit-box;
+    display: -ms-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 8px 0;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .orderwrap .orderlist .fulllodrist .mob.width20 {
+    width: 100%;
+  }
+  .orderwrap .orderlist .fulllodrist .mob .leftcolum {
+    width: 50%;
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .orderwrap .orderlist .fulllodrist .mob .rightcolum {
+    width: 50%;
+    padding: 0;
+    font-size: 1rem;
+  }
+  .orderwrap .orderlist .fulllodrist:first-child {
+    padding: 0 0 20px;
+  }
+}
+/*# sourceMappingURL=order-history.css.map */

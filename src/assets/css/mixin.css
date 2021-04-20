@@ -1,0 +1,8 @@
+/* Mixin */
+.flex {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=mixin.css.map */

@@ -1,0 +1,694 @@
+@import 'mixin';
+@import 'variables';
+
+// Google Font : Noto Sans TC: font-family: 'Noto Sans TC', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap');
+
+*{
+    font-family: 'Noto Sans TC', sans-serif;
+    &:focus,&:hover{
+        outline: 0px;
+    }
+}
+
+header{
+    padding:15px 0;
+    position: fixed;
+    width: 100%;
+    left:0;
+    top:0;
+    z-index: 99;
+    background:$white;
+    .flex{
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo{
+      a{
+          display: block;
+      }
+    }
+    .navbar-brand{
+        padding:0px;
+        a{
+            display: block;
+        }
+    }
+    .navbar-toggler{
+        display:none;
+    }
+
+    #menu{
+        @include flex();
+        align-items: center;
+        justify-content: center;
+        >li{
+            position: relative;
+            list-style: none;
+            z-index: 1;
+            a{
+                padding:6px 15px;
+                display: block;
+                color:$darken;
+                @include transition();
+                text-decoration: none;
+                @include font(15);
+                line-height: 16px;
+                white-space: nowrap;
+                line-height: 20px;
+                align-items: center;
+                &.dropdown{
+                    padding-right: 25px;
+                    display: flex;
+                    align-content: center;
+                    line-height: 50px;
+                    position: relative;
+                }
+                img{
+                    width: 40px;
+                    height: 40px;
+                    display: inline-block;
+                    border: 1px solid $darken;
+                    padding: 5px;
+                    @include radius(50%);
+                    margin-right: 15px;
+                }           
+            }
+            &:hover{
+                >a{
+                    text-decoration: none;
+                    color: $baseColor;
+                    &:after{
+                        @include transform(translateY(-50%) scaleY(1));
+                    }
+                    .dropdown-men{
+                        a{
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .dropdown-menu{
+                opacity: 0;
+                padding: 6px 15px;
+                @include flex();
+                @include scaleY(0);
+                @include transition(all, .3s, ease-out);
+                margin-top:0px;
+                border:0px;
+                @include shadow(0,0,15px,rgba($black,.15%));
+                flex-direction: column;
+                a{
+                    color:$darken;
+                    padding: 10px 0;
+                    &:hover{
+                        color:$baseColor;
+                        text-decoration: none;
+                    }                    
+                }
+
+                
+            }
+            .divider{
+                height: 1px;
+                margin: 5px 0;
+                width: 100%;
+                background-color: $border;
+            }
+            &:hover{
+                .dropdown-menu{
+                    opacity: 1;
+                    display: block;
+                    @include scaleY(1);
+                }
+            }
+            &.dots{
+                &:after{
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 20px;
+                background: url('../img/3dots.svg') center no-repeat;
+                height: 24px;
+                width: 5px;
+                display: inline-block;
+                }
+            }
+        }
+        
+    }
+   
+}
+
+
+
+
+
+@media(max-width:767px){
+    header {
+        .navbar-toggler {
+            display: block;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border:0px;
+            margin-right: -7px;
+            &:hover, &:focus{
+                outline: 0px;
+            }
+            span{
+                position: absolute;
+                width: 24px;
+                left:50%;
+                top:50%;
+                @include transform(translate(-50%,-50%));
+                height: 2px;
+                background: none;
+                display: block;
+                @include transition();
+                &:before{
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background: $baseColor;
+                    @include transform(translate(-50%,-50%) rotate(45deg));
+                    margin-top:0px;
+                    left: 50%;
+                    position: absolute;
+                    @include transition();
+                }
+                &:after{
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background: $baseColor;
+                    @include transform(translate(-50%,-50%) rotate(-45deg));
+                    margin-top:0px;
+                    left: 50%;
+                    position: absolute;
+                    @include transition();
+                }
+            }
+            &.collapsed{
+                span{
+                    background: $baseColor;
+                    &:before{
+                        margin-top:-8px;
+                        @include transform(translate(-50%,-50%) rotate(0deg));
+                    }
+                    &:after{
+                        margin-top:10px;
+                        @include transform(translate(-50%,-50%) rotate(0deg));
+                    }
+                }
+            }
+        }        
+        #menu{
+            position: absolute;
+            background: rgba($baseColor, 0.9%);
+            left:0px;
+            top:0%;
+            flex-direction: column;
+            padding:90px 20px 20px;
+            height:100vh;
+            width: 240px;
+            @include translateX(-100%);
+            @include transition();
+            justify-content: flex-start;
+            li{
+                width: 100%;
+                border-bottom: 1px dotted rgba($white, .3%);
+                a{
+                    &.signup{
+                        display: block;
+                    }
+                }
+                
+                &:last-of-type{
+                    border-bottom: 0px;
+                    padding:20px 0 0;
+                }
+                .dropdown-menu{
+                    position: static;
+                    opacity: 1;
+                    @include scaleY(1);
+                    background: none;
+                    @include shadow(0,0,0,0);
+                    padding:10px;
+                    width: 100%;
+                    margin-top: -15px;
+                    a{
+                        color:$white;                         
+                    }                    
+                }
+                a{
+                    padding:20px 0px;
+                    color: $white;
+                    &:hover{
+                        color:$darken;
+                        text-decoration: none;
+                    }
+                    &.signup{
+                        width: 100%;
+                        height: auto;
+                        margin-left: 0px;
+                        &:hover{
+                            color:$black;
+                            text-decoration: underline;
+                        }
+                    }
+                    &.dropdown{
+                        &:hover{
+                            color: $darken;
+                        }
+                        &:after{
+                            display: none
+                        }        
+                        &:hover{
+                            .dropdown-menu{
+                                color: $darken;
+                            }
+                        }               
+                    }
+                }
+                &.dots{
+                    &:after{
+                    content: none;
+                    }
+                }
+            }
+            &.show{
+                @include translateX(0%);
+            }
+        }
+        &.scrolled{
+            .navbar-toggler{
+                &.collapsed{
+                    span{
+                        background: $black;
+                        &:after,&:before{
+                            background: $black;
+                        }
+                    }
+                }
+                span{
+                    background: none;
+                    &:after,&:before{
+                        background: $black;
+                    }
+                }
+            }
+            #menu{
+                >li{
+                    a{
+                        color:$white;
+                    }                    
+                }                
+            }
+        }
+        nav{
+            justify-content: flex-end;
+            flex-grow: 0;
+        }
+    }    
+    
+}
+
+
+// Appointment style here
+
+.appointments{
+    width: 100%;
+    padding: 110px 0 0 ;
+    .appointwrap{
+        width: 100%;
+        padding: 15px 0 40px;
+        .appointmentcnt{
+            @include flex();
+            justify-content: center;
+            flex-direction: column;
+
+            .viewbox{
+                @include flex();
+                justify-content: space-between;
+                align-items: center;
+                h1{
+                    @include font(30);
+                    color: $darken;
+                    font-weight: 400;
+                }
+                .sorting{
+                    @include flex();
+                    justify-content: center;
+                    align-items: center;
+                    .form-check{
+                        label{
+                            @include font(14);
+                            color: $red;
+                            font-weight: 400;
+                        }
+                    }
+                    .datefield{
+                        max-width: 200px;
+                        display: inline-block;
+                        margin:0px 30px;
+                        position: relative;
+                        .form-control{
+                            background:url(../img/calendar.svg) no-repeat right 25px center;
+                            padding: 10px 30px 10px 10px; 
+                            border: 1px solid #ccc;
+                            @include font(16);
+                            @include radius(5px);
+                            color: $darken;
+                            line-height: 1.4;
+                            width: 100%;
+                            display: block;
+                            background-color: $white;
+                            background-clip: padding-box;
+                            @include transition();
+                            &:focus{
+                                outline: none;
+                                box-shadow: 0 0 0 0.2rem rgba($baseColor, 0.5%)
+                            } 
+                            &::placeholder {
+                                @include font(13);
+                                color: lighten($black, 50%);
+                                font-weight: 300;
+                            }    
+                                                           
+                        }
+                        input[type="time"]::-ms-clear {
+                            display: none;
+                        }
+                        input::-ms-clear {
+                            width: 0;
+                            height: 0;
+                        }  
+                    }
+                    .btnarchieve{
+                        display: inline-block;
+                        a{
+                            display: inline-block;
+                            border: 1px solid $baseColor;
+                            color: $baseColor;
+                            @include font(14);
+                            font-weight: 400;
+                            padding: 8px 10px;
+                            @include radius(5px);
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .appointitems{
+            @include flex();
+            flex-wrap: wrap;          
+            align-content: flex-start;
+            min-height: 600px;
+            .itemsbox{
+                align-content: flex-start;
+                flex-basis: 24%;
+                margin: 25px 0.5% 0;
+                align-items: flex-start;
+                @include radius(6px);
+                border: 1px solid $border;
+                padding: 15px;     
+                .time{
+                    display: flex;
+                    align-items: center;
+                    @include font(14);
+                    font-weight: 600;
+                    color:$darken;
+                    position: relative;
+                    padding: 0 0 15px;
+                    border-bottom: 1px solid lighten($border, 5%);
+                    position: relative;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        width: 14px;
+                        height: 14px;
+                        display: inline-block;
+                        right: 0;
+                        background-color: $baseColor;
+                        @include radius(50%);
+                    }
+                    &.inactive{
+                        position: relative;
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            width: 14px;
+                            height: 14px;
+                            display: inline-block;
+                            right: 0;
+                            background-color: $red;
+                            @include radius(50%);
+                        }
+                    }
+                    img{
+                        width: 18px;
+                        height: 18px;
+                        margin-right: 8px;
+                    }
+                }
+                .desc{
+                    padding: 10px 0;
+                    h2{
+                        @include font(16);
+                        font-weight: 600;
+                        color: $baseColor;
+                        margin-bottom: 15px;
+                        &.inactive{
+                            color: $red;
+                        }
+                    }
+
+                    p{
+                        @include font(14);
+                        color:$darken;
+                        line-height: 24px;
+                        font-weight: 400;
+                        margin: 0;
+                    }
+                }
+                .action{
+                    @include flex();
+                    justify-content: flex-end;
+                    padding-top: 15px;
+                    border-top: 1px solid lighten($border, 5%);
+                    a{
+                        display: inline-block;
+                        margin-left: 20px;
+                        img{
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                    &.inactive{
+                        a{
+                            cursor: default ;
+                            img{
+                                opacity: 0.5;
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+                    }
+
+                }                
+            }
+            
+        }
+    }
+}
+
+
+
+
+@media(max-width:1024px){        
+    .appointments{
+        .appointwrap{
+            width: 100%;
+            .appointmentcnt{
+                @include flex();
+                justify-content: center;
+                flex-direction: column;
+                .viewbox{
+                    .sorting{
+                        .datefield{
+                            .form-control{
+                                padding: 10px 30px 10px 10px; 
+                                border: 1px solid #ccc;
+                                @include font(16);
+                                @include radius(5px);
+                                color: $darken;
+                                line-height: 1.4;
+                                width: 100%;
+                                display: block;
+                                background-color: $white;
+                                background-clip: padding-box;
+                                @include transition();                                    
+                            }
+                        }
+                        .btnarchieve{
+                            display: inline-block;
+                            a{
+                                display: inline-block;
+                                border: 1px solid $baseColor;
+                                color: $baseColor;
+                                @include font(14);
+                                font-weight: 400;
+                                padding: 8px 10px;
+                                @include radius(5px);
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .appointitems{
+                .itemsbox{
+                    align-content: flex-start;
+                    flex-basis: 32.33%;
+                    margin: 25px 0.5% 0;                
+                }            
+            }
+        }
+    }
+}
+
+
+@media(max-width:991px){        
+    .appointments{
+        .appointwrap{
+            width: 100%;
+            .appointmentcnt{
+                @include flex();
+                justify-content: center;
+                flex-direction: column;
+                .viewbox{
+                    width: 100%;
+                    flex-wrap:wrap;
+                    justify-content: space-between;
+                    .heading{
+                        h1{
+                            @include font(28);
+                        }
+                    }
+                    .sorting{
+                        width: 100%;
+                        margin: 20px 0 15px;
+                        justify-content: space-between;
+                        display: flex;
+                        flex-wrap: wrap;
+                        .form-check{
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            margin-bottom: 20px;
+                            label{
+                                @include font(14);
+                                color: $red;
+                                font-weight: 400;
+                            }
+                        }
+                        .datefield{
+                            width: 50%;
+                            margin:0px;
+                            .form-control{
+                                padding: 10px 30px 10px 10px; 
+                                border: 1px solid #ccc;
+                                @include font(16);
+                                @include radius(5px);
+                                color: $darken;
+                                line-height: 1.4;
+                                width: 100%;
+                                display: block;
+                                background-color: $white;
+                                background-clip: padding-box;
+                                @include transition();                                    
+                            }
+                        }
+                        .btnarchieve{
+                            display: inline-block;
+                            a{
+                                display: inline-block;
+                                border: 1px solid $baseColor;
+                                color: $baseColor;
+                                @include font(14);
+                                font-weight: 400;
+                                padding: 8px 10px;
+                                @include radius(5px);
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .appointitems{
+                .itemsbox{
+                    align-content: flex-start;
+                    flex-basis: 48%;
+                    margin: 25px 1% 0;                
+                }            
+            }
+        }
+    }
+}
+
+
+@media(max-width:767px){        
+    .appointments{
+        .appointwrap{
+            width: 100%;
+            .appointmentcnt{
+                @include flex();
+                justify-content: center;
+                flex-direction: column;
+                .viewbox{
+                    width: 100%;
+                    flex-wrap:wrap;
+                    justify-content: space-between;
+                    .heading{
+                        h1{
+                            @include font(24);
+                        }
+                    }                                       
+                    .sorting{
+                        width: 100%;
+                        margin: 20px 0 15px;
+                        justify-content: space-between;
+                        display: flex;
+                        flex-wrap: wrap;
+                        .form-check{
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            margin-bottom: 20px;
+                        } 
+                        .datefield{                            
+                            width: 50%;
+                            margin:0px;
+                            .form-control{
+                                padding: 8px 25px 8px 8px; 
+                                border: 1px solid #ccc;                                    
+                            }
+                        }
+                    }
+                }
+            }
+            .appointitems{
+                .itemsbox{
+                    align-content: flex-start;
+                    flex-basis: 100%;
+                    margin: 25px 0 0;                
+                }            
+            }
+        }
+    }
+}

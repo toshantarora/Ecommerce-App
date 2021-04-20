@@ -1,0 +1,307 @@
+@import 'mixin';
+@import 'variables';
+
+
+
+
+//breadcumb style here
+.breadcumb{
+    width: 100%;
+    @include flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            a{
+                @include font(15);
+                color:$black;
+                text-decoration: none;
+                @include transition;
+                &:hover{
+                    color:$baseColor;
+                }
+            }           
+        }        
+        li:before{
+            display: inline-block;
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: $black;
+            content: ">";
+        }
+        li:first-child:before{
+            content: none;
+        }        
+        li:last-child a{
+            color: $baseColor;
+        }
+    }
+} 
+
+// How it works starts here
+.kitwork{
+    width: 100%;
+    .kitworkwrap{
+        width: 100%;
+        padding: 60px 0 80px;
+        @include flex();
+        justify-content: space-between;
+        align-items: center;
+        border-bottom:1px solid rgba($baseColor, 0.30%); 
+        .kitworktext{
+            max-width: 480px;
+            h1{
+                @include font(42);
+                color: $darken;
+                font-weight: 700;
+            }      
+            h2{
+                @include font(24);
+                color: $darken;
+                font-weight: 400;
+                margin-top: 30px;
+                line-height: 1.4;
+            }      
+        }
+        .kitworkimg{
+            text-align: center;
+            img{
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .kitwork{
+        .kitworkwrap{
+            .kitworktext{
+                max-width: 420px;
+                h1{
+                    @include font(36);
+                }      
+                h2{
+                    @include font(18);
+                    margin-top: 20px;
+                }      
+            }
+            .kitworkimg{
+                text-align: center;
+                img{
+                    width: 80%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .kitwork{
+        .kitworkwrap{
+            width: 100%;
+            padding: 40px 0 60px;
+            .kitworkimg{
+                text-align: center;
+                width: 100%;
+                img{
+                    width: 80%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .kitwork{
+        .kitworkwrap{
+            width: 100%;
+            padding: 20px 0 45px;
+            flex-wrap: wrap;
+            .kitworktext{
+                max-width: 100%;
+                h1{
+                    @include font(30);
+                }      
+                h2{
+                    @include font(16);
+                }      
+            }
+            .kitworkimg{
+                width: 100%;
+                margin-top: 30px;
+                img{
+                    width: 80%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+
+// works instruction starts here
+.kitinstruction{
+    width: 100%;
+    .kitinstructionwrap{
+        padding: 60px 0 50px;
+        @include flex();
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;        
+        .kitinstructionimg{            
+            width: calc(50% - 20px);
+            padding: 60px 0;
+            position: relative;
+            text-align: center;
+            img{
+                width: auto;
+                height: auto; 
+                position: relative;              
+            }   
+            &:before{
+                content: '';
+                border:0px;
+                position: absolute;
+                width: 100%;
+                height: 80%;
+                left:50%;
+                top:50%;
+                @include  translate(-50%, -50%);;
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                background: darken($light, 5%);
+                animation : circleAnim 15s infinite;
+                -webkit-animation : circleAnim 15s infinite;
+                -moz-animation : circleAnim 15s infinite;
+                -o-animation : circleAnim 15s infinite;
+            }     
+        }
+        .kitinstructiontxt{
+            padding: 20px 0;
+            width: calc(50% - 20px);
+            p{
+                max-width: 400px;
+                @include font(16);
+                color:$darken;
+                line-height: 1.8;
+            }
+        }        
+    }
+}
+
+@media (max-width: 1024px){
+    .kitinstruction{
+        width: 100%;
+        .kitinstructionwrap{       
+            .kitinstructionimg{
+                img{
+                    width: 80%;
+                    height: auto;                  
+                }     
+            }    
+        }
+    }
+}
+
+@media (max-width: 991px){
+    .kitinstruction{
+        width: 100%;
+        .kitinstructionwrap{    
+            padding: 40px 0 30px;   
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .kitinstruction{
+        width: 100%;
+        .kitinstructionwrap{   
+            padding: 40px 0 30px;  
+            .kitinstructionimg{            
+                width: calc(100% - 20px);
+                padding: 0 0 40px;
+                text-align: center;
+                img{
+                    width: 80%;
+                    height: auto;    
+                    position: relative;              
+                }
+            }
+            .kitinstructiontxt{
+                padding: 0;
+                width: 100%;
+                p{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+// Circle animation
+@keyframes circleAnim{
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+    }
+    25% { 
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%
+    }
+    50% {
+        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%
+    }
+    75% {
+        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%		
+    }
+}
+@-webkit-keyframes circleAnim{
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+    }
+    25% { 
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%
+    }
+    50% {
+        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%
+    }
+    75% {
+        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%		
+    }
+}
+@-moz-keyframes circleAnim{
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+    }
+    25% { 
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%
+    }
+    50% {
+        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%
+    }
+    75% {
+        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%		
+    }
+}
+@-o-keyframes circleAnim{
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+    }
+    25% { 
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%
+    }
+    50% {
+        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%
+    }
+    75% {
+        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%		
+    }
+}
+

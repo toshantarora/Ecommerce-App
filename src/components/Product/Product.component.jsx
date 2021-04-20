@@ -4,12 +4,14 @@ import CardDetails from '../Product/CardDetails';
 import Cart from '../../assets/images/cart.png';
 import { Link, useHistory } from "react-router-dom";
 const ProductComponent = () => {
+
     let history = useHistory();
     const [search, setSearch] = useState('');
     const [product, setProducts] = useState([]);
     const [productFiltered, setProductFiltered] = useState([]);
 
     useEffect(() => {
+       
         getProducts()
     },[])
 
@@ -33,8 +35,6 @@ const ProductComponent = () => {
 const cartButton  = (e) => {
     e.preventDefault();
 //    console.log(values);
-   
-   
         history.push("cart");
     }
 
@@ -46,7 +46,7 @@ const cartButton  = (e) => {
             {/* {search} */}
            <div style={{ height:"40px",display:"flex", justifyContent:"center", flexDirection:"row" }}>
            <input className="search-type" type="text"  placeholder="search" onChange={handleChange}></input>
-           <button onClick={cartButton} style={{marginLeft:"60px", border:"none", outline:"none"}} type="submit"><img style={{width:"30px", height:"30px"}} src={Cart}/></button>
+           <button onClick={cartButton} style={{marginLeft:"60px", border:"none", outline:"none"}} type="submit"><img style={{width:"30px", height:"30px"}} src={Cart}/><span>0</span></button>
            </div>
             
             <div style={{ display: "flex", flexDirection:"row", width:"100%", height:"auto", flexWrap:"wrap",padding:"40px"}}>

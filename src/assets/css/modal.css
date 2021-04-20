@@ -1,0 +1,135 @@
+/* .modal-container
+{
+  background-color: aqua;
+  width: 50vw;
+  height: 50vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.modal-container.show{
+    opacity: 1;
+    pointer-events: visible;
+}
+.modal-content{
+    width: 536px;
+height: 528px;
+background-color: ghostwhite;
+/* slide from top */
+/* transform: translateY(-200px);
+transition: all 0.3s ease-in-out;
+}
+.modal.show .modal-content{
+    transform: translateY(0);
+}
+.modal-header, .modal-footer{
+    padding: 10px;
+}
+.modal-title{
+    margin: 0;
+}
+.modal-body{
+padding: 10px;
+}
+
+.modal-footer{
+
+}
+.cross{
+    background-color: darkseagreen;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 4vh;
+    width: 48vw;
+    color:dimgray
+}
+.heading-container{
+    background-color: burlywood;
+    width: 48vw;
+    height: 10vh;
+}
+.login-inputs{
+    background-color: chartreuse;
+    width: 48vw;
+    height: 15vh;
+}
+
+.remember-me-container{
+    background-color: chocolate;
+    width: 48vw;
+    height: 6vh;
+}
+.button-container{
+    background-color: darkgoldenrod;
+    width: 48vw;
+    height: 7vh;
+} */ 
+
+
+
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .modal.enter-done {
+    opacity: 1;
+    pointer-events: visible;
+  }
+  
+  .modal.exit {
+    opacity: 0;
+  }
+  
+  .modal-content {
+    width: 500px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-200px);
+  }
+  
+  .modal.enter-done .modal-content {
+    transform: translateY(0);
+  }
+  
+  .modal.exit .modal-content {
+    transform: translateY(-200px);
+  }
+  
+  .modal-header,
+  .modal-footer {
+    padding: 10px;
+  }
+  
+  .modal-title {
+    margin: 0;
+  }
+  
+  .modal-body {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  

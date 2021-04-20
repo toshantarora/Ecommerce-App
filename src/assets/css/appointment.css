@@ -1,0 +1,864 @@
+/* Mixin */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap");
+.flex {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+* {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+*:focus, *:hover {
+  outline: 0px;
+}
+
+header {
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background: #fff;
+}
+
+header .flex {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo a {
+  display: block;
+}
+
+header .navbar-brand {
+  padding: 0px;
+}
+
+header .navbar-brand a {
+  display: block;
+}
+
+header .navbar-toggler {
+  display: none;
+}
+
+header #menu {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header #menu > li {
+  position: relative;
+  list-style: none;
+  z-index: 1;
+}
+
+header #menu > li a {
+  padding: 6px 15px;
+  display: block;
+  color: #0d2e3a;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  line-height: 16px;
+  white-space: nowrap;
+  line-height: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #menu > li a.dropdown {
+  padding-right: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  line-height: 50px;
+  position: relative;
+}
+
+header #menu > li a img {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid #0d2e3a;
+  padding: 5px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  margin-right: 15px;
+}
+
+header #menu > li:hover > a {
+  text-decoration: none;
+  color: #22ab4b;
+}
+
+header #menu > li:hover > a:after {
+  -webkit-transform: translateY(-50%) scaleY(1);
+  transform: translateY(-50%) scaleY(1);
+}
+
+header #menu > li:hover > a .dropdown-men a {
+  text-decoration: none;
+}
+
+header #menu > li .dropdown-menu {
+  opacity: 0;
+  padding: 6px 15px;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  -moz-transform: scaleY(0);
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  margin-top: 0px;
+  border: 0px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header #menu > li .dropdown-menu a {
+  color: #0d2e3a;
+  padding: 10px 0;
+}
+
+header #menu > li .dropdown-menu a:hover {
+  color: #22ab4b;
+  text-decoration: none;
+}
+
+header #menu > li .divider {
+  height: 1px;
+  margin: 5px 0;
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+header #menu > li:hover .dropdown-menu {
+  opacity: 1;
+  display: block;
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+}
+
+header #menu > li.dots:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20px;
+  background: url("../imgs/3dots.svg") center no-repeat;
+  height: 24px;
+  width: 5px;
+  display: inline-block;
+}
+
+@media (max-width: 767px) {
+  header .navbar-toggler {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 0px;
+    margin-right: -7px;
+  }
+  header .navbar-toggler:hover, header .navbar-toggler:focus {
+    outline: 0px;
+  }
+  header .navbar-toggler span {
+    position: absolute;
+    width: 24px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 2px;
+    background: none;
+    display: block;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+  }
+  header .navbar-toggler span:before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #22ab4b;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+    margin-top: 0px;
+    left: 50%;
+    position: absolute;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+  }
+  header .navbar-toggler span:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #22ab4b;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+    margin-top: 0px;
+    left: 50%;
+    position: absolute;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+  }
+  header .navbar-toggler.collapsed span {
+    background: #22ab4b;
+  }
+  header .navbar-toggler.collapsed span:before {
+    margin-top: -8px;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  header .navbar-toggler.collapsed span:after {
+    margin-top: 10px;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  header #menu {
+    position: absolute;
+    background: rgba(34, 171, 75, 0.9);
+    left: 0px;
+    top: 0%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 90px 20px 20px;
+    height: 100vh;
+    width: 240px;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  header #menu li {
+    width: 100%;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  }
+  header #menu li a.signup {
+    display: block;
+  }
+  header #menu li:last-of-type {
+    border-bottom: 0px;
+    padding: 20px 0 0;
+  }
+  header #menu li .dropdown-menu {
+    position: static;
+    opacity: 1;
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    background: none;
+    box-shadow: 0 0 0 0;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    padding: 10px;
+    width: 100%;
+    margin-top: -15px;
+  }
+  header #menu li .dropdown-menu a {
+    color: #fff;
+  }
+  header #menu li a {
+    padding: 20px 0px;
+    color: #fff;
+  }
+  header #menu li a:hover {
+    color: #0d2e3a;
+    text-decoration: none;
+  }
+  header #menu li a.signup {
+    width: 100%;
+    height: auto;
+    margin-left: 0px;
+  }
+  header #menu li a.signup:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  header #menu li a.dropdown:hover {
+    color: #0d2e3a;
+  }
+  header #menu li a.dropdown:after {
+    display: none;
+  }
+  header #menu li a.dropdown:hover .dropdown-menu {
+    color: #0d2e3a;
+  }
+  header #menu li.dots:after {
+    content: none;
+  }
+  header #menu.show {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+  }
+  header.scrolled .navbar-toggler.collapsed span {
+    background: #000;
+  }
+  header.scrolled .navbar-toggler.collapsed span:after, header.scrolled .navbar-toggler.collapsed span:before {
+    background: #000;
+  }
+  header.scrolled .navbar-toggler span {
+    background: none;
+  }
+  header.scrolled .navbar-toggler span:after, header.scrolled .navbar-toggler span:before {
+    background: #000;
+  }
+  header.scrolled #menu > li a {
+    color: #fff;
+  }
+  header nav {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+  }
+}
+
+.appointments {
+  width: 100%;
+  padding: 110px 0 0;
+}
+
+.appointments .appointwrap {
+  width: 100%;
+  padding: 15px 0 40px;
+}
+
+.appointments .appointwrap .appointmentcnt {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox h1 {
+  font-size: 1.875rem;
+  color: #0d2e3a;
+  font-weight: 400;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .form-check label {
+  font-size: 0.875rem;
+  color: #fe6d73;
+  font-weight: 400;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield {
+  max-width: 200px;
+  display: inline-block;
+  margin: 0px 30px;
+  position: relative;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield .form-control {
+  background: url(../imgs/calendar.svg) no-repeat right 25px center;
+  padding: 10px 30px 10px 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: #0d2e3a;
+  line-height: 1.4;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield .form-control::-webkit-input-placeholder {
+  font-size: 0.8125rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield .form-control:-ms-input-placeholder {
+  font-size: 0.8125rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield .form-control::-ms-input-placeholder {
+  font-size: 0.8125rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield .form-control::placeholder {
+  font-size: 0.8125rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield input[type="time"]::-ms-clear {
+  display: none;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield input::-ms-clear {
+  width: 0;
+  height: 0;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .btnarchieve {
+  display: inline-block;
+}
+
+.appointments .appointwrap .appointmentcnt .viewbox .sorting .btnarchieve a {
+  display: inline-block;
+  border: 1px solid #22ab4b;
+  color: #22ab4b;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 8px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  text-decoration: none;
+}
+
+.appointments .appointwrap .appointitems {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  min-height: 600px;
+}
+
+.appointments .appointwrap .appointitems .itemsbox {
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -ms-flex-preferred-size: 24%;
+      flex-basis: 24%;
+  margin: 25px 0.5% 0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border: 1px solid #e5e5e5;
+  padding: 15px;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0d2e3a;
+  position: relative;
+  padding: 0 0 15px;
+  border-bottom: 1px solid #f2f2f2;
+  position: relative;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .time:after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  right: 0;
+  background-color: #22ab4b;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .time.inactive {
+  position: relative;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .time.inactive:after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  right: 0;
+  background-color: #fe6d73;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .time img {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .desc {
+  padding: 10px 0;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .desc h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #22ab4b;
+  margin-bottom: 15px;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .desc h2.inactive {
+  color: #fe6d73;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .desc p {
+  font-size: 0.875rem;
+  color: #0d2e3a;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .action {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-top: 15px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .action a {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .action a img {
+  width: 24px;
+  height: 24px;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .action.inactive a {
+  cursor: default;
+}
+
+.appointments .appointwrap .appointitems .itemsbox .action.inactive a img {
+  opacity: 0.5;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 1024px) {
+  .appointments .appointwrap {
+    width: 100%;
+  }
+  .appointments .appointwrap .appointmentcnt {
+    display: -webkit-box;
+    display: -ms-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield .form-control {
+    padding: 10px 30px 10px 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #0d2e3a;
+    line-height: 1.4;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .btnarchieve {
+    display: inline-block;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .btnarchieve a {
+    display: inline-block;
+    border: 1px solid #22ab4b;
+    color: #22ab4b;
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 8px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    text-decoration: none;
+  }
+  .appointments .appointwrap .appointitems .itemsbox {
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -ms-flex-preferred-size: 32.33%;
+        flex-basis: 32.33%;
+    margin: 25px 0.5% 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .appointments .appointwrap {
+    width: 100%;
+  }
+  .appointments .appointwrap .appointmentcnt {
+    display: -webkit-box;
+    display: -ms-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .heading h1 {
+    font-size: 1.75rem;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting {
+    width: 100%;
+    margin: 20px 0 15px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .form-check {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .form-check label {
+    font-size: 0.875rem;
+    color: #fe6d73;
+    font-weight: 400;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield {
+    width: 50%;
+    margin: 0px;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield .form-control {
+    padding: 10px 30px 10px 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #0d2e3a;
+    line-height: 1.4;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .btnarchieve {
+    display: inline-block;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .btnarchieve a {
+    display: inline-block;
+    border: 1px solid #22ab4b;
+    color: #22ab4b;
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 8px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    text-decoration: none;
+  }
+  .appointments .appointwrap .appointitems .itemsbox {
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+    margin: 25px 1% 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .appointments .appointwrap {
+    width: 100%;
+  }
+  .appointments .appointwrap .appointmentcnt {
+    display: -webkit-box;
+    display: -ms-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .heading h1 {
+    font-size: 1.5rem;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting {
+    width: 100%;
+    margin: 20px 0 15px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .form-check {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield {
+    width: 50%;
+    margin: 0px;
+  }
+  .appointments .appointwrap .appointmentcnt .viewbox .sorting .datefield .form-control {
+    padding: 8px 25px 8px 8px;
+    border: 1px solid #ccc;
+  }
+  .appointments .appointwrap .appointitems .itemsbox {
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin: 25px 0 0;
+  }
+}
+/*# sourceMappingURL=appointment.css.map */

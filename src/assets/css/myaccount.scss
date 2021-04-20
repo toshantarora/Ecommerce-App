@@ -1,0 +1,342 @@
+@import 'mixin';
+@import 'variables';
+
+// Google Font : Noto Sans TC: font-family: 'Noto Sans TC', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap');
+
+*{
+    font-family: 'Noto Sans TC', sans-serif;
+    &:focus,&:hover{
+        outline: 0px;
+    }
+}
+
+//breadcumb style here
+.breadcumb{
+    width: 100%;
+    @include flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            a{
+                @include font(15);
+                color:$black;
+                text-decoration: none;
+                @include transition;
+                &:hover{
+                    color:$baseColor;
+                }
+            }           
+        }        
+        li:before{
+            display: inline-block;
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: $black;
+            content: ">";
+        }
+        li:first-child:before{
+            content: none;
+        }        
+        li:last-child a{
+            color: $baseColor;
+        }
+    }
+}
+//my account style here
+.myaccount{
+    width: 100%;
+    padding: 30px 0 40px;
+    h1{
+        @include font(30);
+        color:$darken;
+        font-weight: 400;
+    }
+    .accountwrap{
+        width: 100%;
+        .userdetails{
+            width: 100%;
+            .userprofilepic{
+                @include flex();
+                justify-content: flex-start;
+                align-items: flex-end;
+                padding: 15px 0;
+                .userprofilebox{
+                    width: 120px;
+                    height: 120px;
+                    border: 1px solid #DDDDDD;
+                    @include radius(5px);
+                    background: lighten($border, 8%);
+                    @include flex();
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: auto;
+                        height: auto;
+                    }
+                }
+            }
+            .picload{
+                margin-left: 15px;
+                .btnpic{
+                    background:$baseColor;
+                    color:$white;
+                    @include font(16);
+                    @include radius(5px);
+                    padding: 8px 20px;
+                    font-weight: 300;
+                    cursor: pointer;
+                    border: 0;
+                    outline: 0;
+                    @include transition;
+                    display: inline-block;
+                    &:hover{
+                        background: $darken;
+                        @include shadow(0,3px,13px, rgba($black, .5%));
+                    }
+                }
+            }
+        }
+        .form-group{
+            margin-bottom: 20px;
+            label{
+                @include font(12);
+                color: $black;
+            }
+            .text-field {
+              width: 100%;
+              .MuiInputBase-root:hover {
+                .MuiOutlinedInput-notchedOutline{
+                    border-color: rgba(0, 0, 0, 0.23);
+                    border-width: 1px;
+                }
+              }
+              .MuiOutlinedInput-root.Mui-focused{
+                .MuiOutlinedInput-notchedOutline{
+                    border-color: rgba(0, 0, 0, 0.23);
+                    border-width: 1px; 
+                }
+              }
+              .MuiInputLabel-outlined.MuiInputLabel-shrink{
+                  color: #22ab4b;
+                  font-size: 16px;
+              }
+            }
+            .select-dropdown {
+               width: 100%;
+               .MuiInputBase-root:hover {
+                .MuiOutlinedInput-notchedOutline{
+                    border-color: rgba(0, 0, 0, 0.23);
+                    border-width: 1px;
+                }
+              }
+              .MuiOutlinedInput-root.Mui-focused{
+                .MuiOutlinedInput-notchedOutline{
+                    border-color: rgba(0, 0, 0, 0.23);
+                    border-width: 1px; 
+                }
+              }
+              .MuiInputLabel-outlined.MuiInputLabel-shrink{
+                color: #22ab4b;
+                font-size: 16px;
+              }
+            }
+            // .radio-btn {
+            //     .MuiFormControlLabel-root {
+            //         .MuiRadio-root{
+            //             color: #22ab4b !important;
+            //         }
+            //     }
+            // }
+            // .form-control{
+            //     padding: 1rem 0.95rem; 
+            //     border: 1px solid #ccc;
+            //     @include font(16);
+            //     @include radius(5px);
+            //     color: $darken;
+            //     line-height: 1.4;
+            //     width: 100%;
+            //     display: block;
+            //     background-color: $white;
+            //     background-clip: padding-box;
+            //     @include transition();
+            //     &:focus{
+            //         outline: none;
+            //         box-shadow: 0 0 0 0.2rem rgba($baseColor, 0.5%)
+            //     }
+            //     &::placeholder {
+            //         @include font(14);
+            //         color: lighten($black, 50%);
+            //         font-weight: 300;
+            //     }                         
+            // }
+            // .custom-select{
+            //     padding: 1rem 0.95rem; 
+            //     border: 1px solid #ccc;
+            //     @include font(16);
+            //     @include radius(5px);
+            //     line-height: 1.4;
+            //     width: 100%;
+            //     display: block;
+            //     background-color: $white;
+            //     background-clip: padding-box;
+            //     height: auto;
+            //     appearance: none;
+            //     background: $white url('../img/area-updown.svg')  no-repeat right 0.75rem center;
+            //     &:focus{
+            //         outline: none;
+            //         box-shadow: 0 0 0 0.2rem rgba($baseColor, 0.5%)
+            //     }                     
+            // } 
+        }
+    }
+    .shipping{
+        width: 100%;
+        padding: 20px 30px 10px;
+        border: 1px solid #DDDDDD;
+        @include radius(5px);
+        margin-top:20px;
+        h2{
+            @include font(22);
+            color:$black;
+            font-weight: 400;
+            margin:0 0 20px;
+        }
+    }
+    .billing{
+        width: 100%;
+        padding: 20px 30px 10px;
+        border: 1px solid #DDDDDD;
+        @include radius(5px);
+        margin-top:30px;
+        h2{
+            @include font(22);
+            color:$black;
+            margin:0 0 20px;
+        }
+        .form-group{
+            .rdio {
+                position: relative;
+                input[type="radio"] {
+                  opacity: 0;
+                }
+                label {
+                  padding-left: 10px;
+                  cursor: pointer;
+                  margin-bottom: 7px !important;
+                  @include font(16);
+                  font-weight: 400;
+                  &:before {
+                    width: 18px;
+                    height: 18px;
+                    position: absolute;
+                    top: 5px;
+                    left: 0;
+                    content: '';
+                    @include radius(50px);
+                    border: 1px solid $baseColor;
+                    background: #fff;
+                  }
+                }
+                input[type="radio"] {
+                    margin:0px;
+                  &:disabled + label {
+                    color: #999;
+                    &:before {
+                      background-color:$baseColor;
+                    }
+                  }
+                  &:checked + label::after {
+                    content: '';
+                    position: absolute;
+                    top: 9px;
+                    left: 4px;
+                    display: inline-block;
+                    @include font(11);
+                    width: 10px;
+                    height: 10px;
+                    background-color: $baseColor;
+                    @include radius(50px);
+                  }
+                }
+              }              
+              .rdio-default input[type="radio"]:checked + label:before {
+                border-color: $baseColor;
+              }
+              
+              .rdio-primary input[type="radio"]:checked + label {
+                &:before {
+                  border-color: $baseColor;
+                }
+                &::after {
+                  background-color:$baseColor;
+                }
+              }
+        }
+    }
+}
+
+//responsive style here
+@media (max-width:767px){
+    .myaccount{
+        width: 100%;
+        padding: 15px 0 40px;
+        h1{
+            @include font(24);
+        }
+        .accountwrap{
+            width: 100%;
+            .userdetails{
+                width: 100%;
+                .userprofilepic{
+                    @include flex();
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                    padding: 15px 0;
+                }
+            }
+            .form-group{
+                margin-bottom: 15px;
+                .form-control{
+                    padding: 0.80rem 0.95rem;                      
+                }
+                .custom-select{
+                    padding: 0.80rem 0.95rem;                       
+                } 
+            }
+        }
+        .shipping{
+            padding: 12px 18px 5px;
+            margin-top:20px;
+            h2{
+                @include font(22);
+                color:$black;
+                font-weight: 400;
+                margin:0 0 20px;
+            }
+        }
+        .billing{
+            padding: 12px 18px 5px;
+            margin-top:20px;
+            h2{
+                @include font(20);
+            }
+            .form-group{
+                .rdio {
+                    position: relative;
+                    label {
+                      @include font(15);
+                      font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}

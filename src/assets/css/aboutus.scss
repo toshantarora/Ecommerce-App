@@ -1,0 +1,239 @@
+@import 'mixin';
+@import 'variables';
+
+
+
+
+//breadcumb style here
+.breadcumb{
+    width: 100%;
+    @include flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            a{
+                @include font(15);
+                color:$black;
+                text-decoration: none;
+                @include transition;
+                &:hover{
+                    color:$baseColor;
+                }
+            }           
+        }        
+        li:before{
+            display: inline-block;
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: $black;
+            content: ">";
+        }
+        li:first-child:before{
+            content: none;
+        }        
+        li:last-child a{
+            color: $baseColor;
+        }
+    }
+} 
+
+// mission style starts here
+.mission{
+    width: 100%;        
+    .missionwrap{
+        width: 100%;  
+        padding: 60px 0;       
+        @include flex();
+        justify-content: space-between;
+        align-items: center;
+        .missiontext{
+            h1{
+                @include font(25);
+                color:$black;
+            }   
+            h2{
+                @include font(36);
+                font-weight: 600;
+                color:$darken;
+                margin-top: 20px;
+            }
+        }
+        .missionimg{
+            padding: 0;
+            margin-top: -50px;
+            img{
+                width: 90%;
+                height: auto;
+            }            
+        }       
+    }    
+}
+
+
+@media (max-width: 767px) {
+    .mission{
+        width: 100%;        
+        .missionwrap{
+            padding: 45px 0;        
+            flex-wrap: wrap;
+            .missiontext{
+                h1{
+                    @include font(22);
+                    color:$black;
+                }   
+                h2{
+                    @include font(30);
+                    font-weight: 600;
+                }
+            }
+            .missionimg{
+                padding: 0;
+                width: 100%;
+                margin-top: 0px;
+                text-align: center;
+                img{
+                    width: 80%;
+                    height: auto;
+                }            
+            }       
+        }    
+    }
+}
+
+// betterhlth style starts here
+.betterhlth{
+    width: 100%;
+    .betterhlthwrap{
+        padding: 60px 0;
+        border-width:1px 0 1px 0;
+        border-style: solid;
+        border-color: rgba($baseColor, 0.30%); 
+        @include flex();
+        justify-content: space-between;
+        align-items: center;
+        .betterhlthtext{
+            p{
+                @include font(24);
+                max-width: 480px;
+                line-height: 1.8;
+                color:$darken;
+            }
+        }
+        .betterhlthimg{
+            padding: 0;
+            img{
+                width: 90%;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .betterhlth{
+        width: 100%;
+        .betterhlthwrap{
+            padding: 45px 0;
+            flex-wrap: wrap;
+            .betterhlthtext{
+                p{
+                    @include font(20);
+                    max-width: 480px;
+                    line-height: 1.8;
+                    color:$darken;
+                }
+            }
+            .betterhlthimg{
+                margin-top: 40px;
+                padding: 0;
+                width: 100%;
+                text-align: center;
+                img{
+                    width: 80%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+// cofounder style starts here
+.cofounder{
+    width:100%;
+    .cofounderwrap{
+        width: 90%;
+        padding: 60px 5%;
+        @include flex();
+        justify-content: flex-start;    
+        .cofounderimg{
+            padding: 0;            
+            img{
+                width: 200px;
+                height: auto;
+                @include radius(50%);
+            }
+        }
+        .founderinfo{
+            h3{
+                @include font(24);
+                font-weight: 600;
+            }
+            p{
+                @include font(18);
+                margin-top: 30px;
+                margin-bottom: 0;
+                color: $darken;
+                line-height: 1.8;
+            }
+        }  
+    }
+}
+
+
+@media (max-width: 991px) {
+    .cofounder{
+        width:100%;
+        .cofounderwrap{
+            width: 100%;
+            padding: 45px 0; 
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .cofounder{
+        width:100%;        
+        .cofounderwrap{
+            flex-wrap: wrap;
+            .cofounderimg{
+                padding: 0;
+                width: 100%;
+                text-align: center;            
+                img{
+                    width: 200px;
+                    height: auto;
+                    @include radius(50%);
+                }
+            }
+            .founderinfo{
+                text-align: center;
+                h3{
+                    @include font(20);
+                }
+                p{
+                    @include font(16);
+                    margin-top: 20px;
+                }
+            }  
+        }
+        
+    }
+}

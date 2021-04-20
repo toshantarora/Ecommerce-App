@@ -1,0 +1,324 @@
+/* Mixin */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap");
+.flex {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+* {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+*:focus, *:hover {
+  outline: 0px;
+}
+
+.breadcumb {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.breadcumb ul {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcumb ul li {
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.breadcumb ul li a {
+  font-size: 0.9375rem;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.breadcumb ul li a:hover {
+  color: #22ab4b;
+}
+
+.breadcumb ul li:before {
+  display: inline-block;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  color: #000;
+  content: ">";
+}
+
+.breadcumb ul li:first-child:before {
+  content: none;
+}
+
+.breadcumb ul li:last-child a {
+  color: #22ab4b;
+}
+
+.faqbanner {
+  width: 100%;
+  background: #e9fbef url("../imgs/contact-txture.png") right top no-repeat;
+  background-size: auto;
+  overflow: hidden;
+}
+
+.faqbanner .faqsearch {
+  padding: 60px 0;
+}
+
+.faqbanner .faqsearch .faqsearchwrap {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.faqbanner .faqsearch .faqsearchwrap h1 {
+  font-size: 2.625rem;
+  color: #000;
+  font-weight: 400;
+}
+
+.faqbanner .faqsearch .faqsearchwrap form {
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px 0 40px;
+  position: relative;
+}
+
+.faqbanner .faqsearch .faqsearchwrap form .form-control {
+  border: transparent;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  color: #0d2e3a;
+  line-height: 1.4;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+}
+
+.faqbanner .faqsearch .faqsearchwrap form .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(34, 171, 75, 0.5);
+}
+
+.faqbanner .faqsearch .faqsearchwrap form .form-control::-webkit-input-placeholder {
+  font-size: 0.875rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.faqbanner .faqsearch .faqsearchwrap form .form-control:-ms-input-placeholder {
+  font-size: 0.875rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.faqbanner .faqsearch .faqsearchwrap form .form-control::-ms-input-placeholder {
+  font-size: 0.875rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.faqbanner .faqsearch .faqsearchwrap form .form-control::placeholder {
+  font-size: 0.875rem;
+  color: gray;
+  font-weight: 300;
+}
+
+.faqbanner .faqsearch .faqsearchwrap form button {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  border: transparent;
+  outline: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.faqbanner .faqsearch .faqsearchwrap form button img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+.faqbanner .faqsearch .faqsearchwrap form button:focus {
+  outline: none;
+}
+
+.faqbanner .faqsearch .faqsearchwrap p {
+  font-size: 1rem;
+  color: #22ab4b;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.faq {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.faq h2 {
+  font-size: 1.875rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  color: #000;
+}
+
+.faq h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #22ab4b;
+  margin-bottom: 20px;
+}
+
+.faq .card {
+  border-radius: 5;
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  background: none;
+  border: 1px solid #DDDDDD;
+  margin-bottom: 20px;
+}
+
+.faq .card .card-header {
+  border: 0px;
+  margin-bottom: 0px;
+  background: none;
+  cursor: pointer;
+  font-size: 1.125rem;
+  color: #000;
+  padding: 20px;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1.4;
+}
+
+.faq .card .card-header:after {
+  content: url("../imgs/faqminus.svg");
+}
+
+.faq .card .card-header.collapsed {
+  font-weight: 400;
+  background: none;
+  padding: 15px 20px;
+}
+
+.faq .card .card-header.collapsed:after {
+  content: url("../imgs/faqplus.svg");
+}
+
+.faq .card-body {
+  padding: 0 20px 15px;
+  font-size: 1.125rem;
+}
+
+.faq .card-body p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #666666;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.faq .card-body p span {
+  color: #0d2e3a;
+  font-weight: 500;
+}
+
+.faq .card-body p a {
+  font-size: 1rem;
+  color: #22ab4b;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.faq .card-body p a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+  .faqbanner .faqsearch .faqsearchwrap h1 {
+    font-size: 1.875rem;
+  }
+  .faqbanner .faqsearch .faqsearchwrap form {
+    width: 100%;
+    margin: 25px 0 30px;
+    position: relative;
+  }
+}
+
+@media (max-width: 767px) {
+  .faqbanner .faqsearch {
+    padding: 45px 0 60px;
+  }
+  .faqbanner .faqsearch .faqsearchwrap h1 {
+    font-size: 1.625rem;
+  }
+  .faq {
+    width: 100%;
+    padding: 40px 0 30px;
+  }
+  .faq h2 {
+    font-size: 1.5rem;
+  }
+  .faq h3 {
+    font-size: 1.25rem;
+  }
+  .faq .card .card-header {
+    font-size: 1rem;
+  }
+}
+/*# sourceMappingURL=faq.css.map */

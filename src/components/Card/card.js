@@ -16,7 +16,6 @@ const Card = () => {
     const [items, setItems] = useState([]);
     return (
                 <div className="card">
-                  
                   {
                         items.map((item, index) => {
                             return(

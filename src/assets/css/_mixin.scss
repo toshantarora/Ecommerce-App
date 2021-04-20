@@ -1,0 +1,126 @@
+/* Mixin */
+
+@mixin radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+@mixin shadow($left, $top, $blur, $primary) {
+    box-shadow: $left $top $blur $primary;
+    -webkit-box-shadow: $left $top $blur $primary;
+    -moz-box-shadow: $left $top $blur $primary;
+}
+
+@mixin rotate($radius) {
+    transform: rotate($radius);
+    -webkit-transform: rotate($radius);
+    -moz-transform: rotate($radius);
+}
+
+@mixin rotateY($radius) {
+    transform: rotateY($radius);
+    -webkit-transform: rotateY($radius);
+    -moz-transform: rotateY($radius);
+}
+
+@mixin scale($size) {
+    transform: scale($size);
+    -webkit-transform: scale($size);
+    -moz-transform: scale($size);
+}
+
+@mixin scaleX($size) {
+    transform: scaleX($size);
+    -webkit-transform: scaleX($size);
+    -moz-transform: scaleX($size);
+}
+
+@mixin scaleY($size) {
+    transform: scaleY($size);
+    -webkit-transform: scaleY($size);
+    -moz-transform: scaleY($size);
+}
+
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $ease: linear) {
+    transition: $property $duration $ease;
+    -webkit-transition: $property $duration $ease;
+    -moz-transition: $property $duration $ease;
+}
+
+@mixin translateY($property) {
+    transform: translateY($property);
+    -webkit-transform: translateY($property);
+    -moz-transform: translateY($property);
+}
+
+@mixin translateX($property) {
+    transform: translateX($property);
+    -webkit-transform: translateX($property);
+    -moz-transform: translateX($property);
+}
+
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin transition-delay($delay) {
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin flex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex-inline() {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+@mixin font($size) {
+    font-size: ($size/16) + rem;
+}
+
+.flex{
+ @include flex();
+}

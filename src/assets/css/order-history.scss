@@ -1,0 +1,185 @@
+@import 'mixin';
+@import 'variables';
+
+
+
+
+//breadcumb style here
+.breadcumb{
+    width: 100%;
+    @include flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            a{
+                @include font(15);
+                color:$black;
+                text-decoration: none;
+                @include transition;
+                &:hover{
+                    color:$baseColor;
+                }
+            }           
+        }        
+        li:before{
+            display: inline-block;
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: $black;
+            content: ">";
+        }
+        li:first-child:before{
+            content: none;
+        }        
+        li:last-child a{
+            color: $baseColor;
+        }
+    }
+}
+// Orderlist style here
+.orderwrap{
+    width:100%;
+    padding:25px 0 60px;
+    h1{
+        @include font(30);
+        color: $darken;
+        margin:0 0 15px;
+    }
+    .orderlist{
+        padding: 20px 30px;
+        border: 1px solid #DDDDDD;
+        @include radius(5px);
+        .orderthread{
+            @include flex();
+            // justify-content: space-between;
+            justify-content: flex-start;
+            align-items: center; 
+            padding: 0 0 25px;
+            border-bottom: 1px dashed #DDDDDD;
+            .thread{
+                @include font(18);
+                font-weight: 600;
+                color: $black;
+                width: 16%;
+                &.width20{
+                    width: 20%;
+                }
+            }           
+        }
+        .fulllodrist{
+            @include flex();            
+            justify-content: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px dashed #DDDDDD;
+            .mob{
+                width: 16%;
+                &.width20{
+                    width: 20%;
+                } 
+                .leftcolum{
+                    display: none;
+                }
+                .rightcolum{
+                    padding: 0;
+                    .itemdetails{
+                        @include font(16);
+                        color: $black; 
+                        h2{
+                            a{
+                                display: block;
+                                @include font(16);
+                                color:$black;
+                                text-decoration: none;
+                                @include transition();
+                                &:hover{
+                                    color: $baseColor;
+                                    text-decoration: underline
+                                }
+                            }
+                        }
+                        p{
+                            @include font(12);
+                            color:$baseColor;
+                            margin: 0;
+                        }
+                        a{
+                            display: inline-block;
+                            @include font(16);
+                            color: $baseColor;
+                            text-decoration: none;
+                            .filepdf{
+                                width: 26px;
+                                height:auto;
+                            }
+                            .repeatimg{
+                                width: 16px;
+                                height: auto;
+                                margin-right: 8px;
+                            }
+                        }
+                    }                
+                }
+            }
+            &:last-child{
+                border: 0;
+            }           
+        }
+    }
+}
+
+// Orderlist responsive style here
+@media (max-width:991px){
+    .orderwrap{
+        width:100%;
+        padding:25px 0 50px;
+        h1{
+            @include font(24);
+            color: $darken;
+            margin:0 0 15px;
+        }
+        .orderlist{
+            padding: 15px 20px;
+            border: 1px solid #DDDDDD;
+            @include radius(5px);
+            .orderthread{
+                display: none;
+            }
+            .fulllodrist{                
+                flex-wrap: wrap;
+                .mob{
+                    @include flex();
+                    justify-content: center;
+                    padding:8px 0;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    &.width20{
+                        width: 100%;
+                    } 
+                    .leftcolum{
+                        width: 50%;
+                        display: block;
+                        @include font(16);
+                        font-weight: 600;
+                    }
+                    .rightcolum{
+                        width: 50%;
+                        padding: 0;
+                        @include font(16);
+                        
+                    }
+                } 
+                &:first-child{
+                    padding: 0 0 20px;
+                }            
+            }
+        }
+    }
+}

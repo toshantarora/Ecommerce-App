@@ -1,0 +1,210 @@
+@import 'mixin';
+@import 'variables';
+
+//breadcumb style here
+.breadcumb{
+    width: 100%;
+    @include flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+
+    ul{
+        margin: 0;
+        padding: 0;
+        li{
+            list-style: none;
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            a{
+                @include font(15);
+                color:$black;
+                text-decoration: none;
+                @include transition;
+                &:hover{
+                    color:$baseColor;
+                }
+            }           
+        }        
+        li:before{
+            display: inline-block;
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: $black;
+            content: ">";
+        }
+        li:first-child:before{
+            content: none;
+        }        
+        li:last-child a{
+            color: $baseColor;
+        }
+    }
+} 
+
+
+.contact{
+    width: 100%;
+    background: lighten($light, 1%) url('../img/contact-txture.png') right top no-repeat ;
+    min-height: 525px;
+    background-size:auto;
+    overflow: hidden;
+    .contacttext{
+        padding: 100px 0 0;
+        h1{
+            @include font(42);
+            color: $black;
+            font-weight: 600;
+        }
+        p{
+            @include font(18);
+            color: $black;
+            margin-top: 20px;
+            max-width: 500px;
+            font-weight: 500;
+            line-height: 1.6;
+            a{
+                color: $black;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 991px) {
+    .contact{
+        min-height: 400px;
+        background-size:580px;
+        .contacttext{
+            padding: 80px 0 0;
+            h1{
+                @include font(36);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .contact{
+        min-height: 360px;
+        background-size:80%;
+        .contacttext{
+            padding: 10% 0 0;
+            h1{
+                @include font(30);
+            }
+            p{
+                @include font(16);
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+.contactform{
+    margin-top: -150px;
+    .contactwrap{
+        width: 50%;
+        background: $white;
+        @include radius(5px);
+        padding: 40px;
+        h2{
+            @include font(24);
+            color: $black;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .form-group{
+            margin-bottom: 1.5rem;
+            .text-field {
+                width: 100%;
+                background-color: $white;
+                .MuiInputBase-root:hover {
+                  .MuiOutlinedInput-notchedOutline{
+                      border-color: rgba(0, 0, 0, 0.23);
+                      border-width: 1px;
+                  }
+                }
+                .MuiOutlinedInput-root.Mui-focused{
+                  .MuiOutlinedInput-notchedOutline{
+                      border-color: rgba(0, 0, 0, 0.23);
+                      border-width: 1px; 
+                  }
+                }
+                .MuiInputLabel-outlined.MuiInputLabel-shrink{
+                    color: #22ab4b;
+                    font-size: 16px;
+                }
+            }
+        }
+        .form-control{
+            padding: 1rem 0.95rem; 
+            border: 1px solid #ccc;
+            @include font(16);
+            @include radius(5px);
+            color: $darken;
+            line-height: 1.4;
+            width: 100%;
+            display: block;
+            height: auto;
+            background-color: $white;
+            background-clip: padding-box;
+            @include transition();
+            &:focus{
+                outline: none;
+                box-shadow: 0 0 0 0.2rem rgba($baseColor, 0.5%)
+            }
+        }
+        .formsubmit{
+            display: inline-block;
+            padding: 12px 50px;
+            background: $baseColor;
+            color: $white;
+            text-align: center;
+            @include radius(28px);
+            @include font(18);
+            @include transition;
+            outline: none;
+            border: 0;
+            cursor: pointer;
+            &:hover{
+                background: $darken;
+                @include shadow(0,3px,13px, rgba($black, .5%));
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .contactform{
+        margin-top: -100px;
+        .contactwrap{
+            padding: 30px;
+            width: 75%;
+            h2{
+                @include font(24);
+            }
+            .formsubmit{
+                padding: 12px 40px; 
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .contactform{
+        margin-top: -100px;
+        .contactwrap{
+            padding: 25px 20px;
+            width: 100%;
+            h2{
+                @include font(20);
+            }
+            .formsubmit{
+                @include font(16);
+                padding: 8px 30px; 
+            }
+        }
+    }
+}

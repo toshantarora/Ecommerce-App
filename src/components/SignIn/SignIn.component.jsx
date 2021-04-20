@@ -1,22 +1,17 @@
 import React,{useState} from 'react';
 import "bulma";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
  const SignInComponent = () =>{
   let history = useHistory();
-  // const [username, setUserName] = useState('');
-  // const [password, setPassword] = useState('');
+  
   const [values, setValues] = useState([]);
 
-
-
-const handleSignIn  = (e) => {
+  // form Sigin Button 
+    const handleSignIn  = (e) => {
      e.preventDefault();
-    console.log(values);
-    
-    
-         history.push("products");
+    //  console.log(values);
+     history.push("products");
      }
-
 
     return(
               <section class="hero is-primary is-fullheight ">
@@ -26,6 +21,7 @@ const handleSignIn  = (e) => {
                             <p class="subtitle">Welcome in Ecommerce App</p>
                         </div>
                          <div style={{width:"40%"}}>
+
                             <form class="box" onSubmit={handleSignIn} >
                                 <div class="field">
                                   <label class="label">Email</label>

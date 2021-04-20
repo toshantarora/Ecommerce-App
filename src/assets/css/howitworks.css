@@ -1,0 +1,306 @@
+/* Mixin */
+.flex {
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.breadcumb {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.breadcumb ul {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcumb ul li {
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.breadcumb ul li a {
+  font-size: 0.9375rem;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.breadcumb ul li a:hover {
+  color: #22ab4b;
+}
+
+.breadcumb ul li:before {
+  display: inline-block;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  color: #000;
+  content: ">";
+}
+
+.breadcumb ul li:first-child:before {
+  content: none;
+}
+
+.breadcumb ul li:last-child a {
+  color: #22ab4b;
+}
+
+.kitwork {
+  width: 100%;
+}
+
+.kitwork .kitworkwrap {
+  width: 100%;
+  padding: 60px 0 80px;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(34, 171, 75, 0.3);
+}
+
+.kitwork .kitworkwrap .kitworktext {
+  max-width: 480px;
+}
+
+.kitwork .kitworkwrap .kitworktext h1 {
+  font-size: 2.625rem;
+  color: #0d2e3a;
+  font-weight: 700;
+}
+
+.kitwork .kitworkwrap .kitworktext h2 {
+  font-size: 1.5rem;
+  color: #0d2e3a;
+  font-weight: 400;
+  margin-top: 30px;
+  line-height: 1.4;
+}
+
+.kitwork .kitworkwrap .kitworkimg {
+  text-align: center;
+}
+
+.kitwork .kitworkwrap .kitworkimg img {
+  width: auto;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .kitwork .kitworkwrap .kitworktext {
+    max-width: 420px;
+  }
+  .kitwork .kitworkwrap .kitworktext h1 {
+    font-size: 2.25rem;
+  }
+  .kitwork .kitworkwrap .kitworktext h2 {
+    font-size: 1.125rem;
+    margin-top: 20px;
+  }
+  .kitwork .kitworkwrap .kitworkimg {
+    text-align: center;
+  }
+  .kitwork .kitworkwrap .kitworkimg img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .kitwork .kitworkwrap {
+    width: 100%;
+    padding: 40px 0 60px;
+  }
+  .kitwork .kitworkwrap .kitworkimg {
+    text-align: center;
+    width: 100%;
+  }
+  .kitwork .kitworkwrap .kitworkimg img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .kitwork .kitworkwrap {
+    width: 100%;
+    padding: 20px 0 45px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .kitwork .kitworkwrap .kitworktext {
+    max-width: 100%;
+  }
+  .kitwork .kitworkwrap .kitworktext h1 {
+    font-size: 1.875rem;
+  }
+  .kitwork .kitworkwrap .kitworktext h2 {
+    font-size: 1rem;
+  }
+  .kitwork .kitworkwrap .kitworkimg {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .kitwork .kitworkwrap .kitworkimg img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.kitinstruction {
+  width: 100%;
+}
+
+.kitinstruction .kitinstructionwrap {
+  padding: 60px 0 50px;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.kitinstruction .kitinstructionwrap .kitinstructionimg {
+  width: calc(50% - 20px);
+  padding: 60px 0;
+  position: relative;
+  text-align: center;
+}
+
+.kitinstruction .kitinstructionwrap .kitinstructionimg img {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.kitinstruction .kitinstructionwrap .kitinstructionimg:before {
+  content: '';
+  border: 0px;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background: #d0f6dc;
+  animation: circleAnim 15s infinite;
+  -webkit-animation: circleAnim 15s infinite;
+  -moz-animation: circleAnim 15s infinite;
+  -o-animation: circleAnim 15s infinite;
+}
+
+.kitinstruction .kitinstructionwrap .kitinstructiontxt {
+  padding: 20px 0;
+  width: calc(50% - 20px);
+}
+
+.kitinstruction .kitinstructionwrap .kitinstructiontxt p {
+  max-width: 400px;
+  font-size: 1rem;
+  color: #0d2e3a;
+  line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+  .kitinstruction {
+    width: 100%;
+  }
+  .kitinstruction .kitinstructionwrap .kitinstructionimg img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .kitinstruction {
+    width: 100%;
+  }
+  .kitinstruction .kitinstructionwrap {
+    padding: 40px 0 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .kitinstruction {
+    width: 100%;
+  }
+  .kitinstruction .kitinstructionwrap {
+    padding: 40px 0 30px;
+  }
+  .kitinstruction .kitinstructionwrap .kitinstructionimg {
+    width: calc(100% - 20px);
+    padding: 0 0 40px;
+    text-align: center;
+  }
+  .kitinstruction .kitinstructionwrap .kitinstructionimg img {
+    width: 80%;
+    height: auto;
+    position: relative;
+  }
+  .kitinstruction .kitinstructionwrap .kitinstructiontxt {
+    padding: 0;
+    width: 100%;
+  }
+  .kitinstruction .kitinstructionwrap .kitinstructiontxt p {
+    max-width: 100%;
+  }
+}
+
+@keyframes circleAnim {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+  }
+  50% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+  }
+  75% {
+    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+  }
+}
+
+@-webkit-keyframes circleAnim {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+  }
+  50% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+  }
+  75% {
+    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+  }
+}
+/*# sourceMappingURL=howitworks.css.map */
